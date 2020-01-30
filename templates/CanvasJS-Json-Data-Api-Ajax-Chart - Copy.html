@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  var dataPoints = []
+ 
+  $.getJSON("/", function(field) {
+  var maxArray = [] ;   
+//alert(field[1][0]);
+    for (var i = 0; i < field.length; i++) {
+      dataPoints.push({
+        x: new Date(field[i][0]),
+        y: field[i][1] //parseFloat(field[i][1])
+      }); 
+    }
+
+    for (var i = 0; i < field.length; i++) {
+      maxArray[i]=field[i][1] ;
+    }
+	console.log(maxArray); 
+	var Vmax = Math.max.apply(null, maxArray);    
+	console.log(Vmax);
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+      zoomEnabled: true,
+      animationEnabled: true,
+      exportEnabled: true,
+      theme: "light1",
+      title: {
+        text: "CPU Temperature DataLog"
+      },
+      axisX: {
+        title: "Time"
+      },
+      axisY: {
+        title: "CPU Temperature" ,includeZero: false,
+	suffix: "°C", //valueFormatString: "##.## °C"
+	stripLines: [{
+			value: Vmax,
+			label: "Extreme Heat ="+Vmax+"°C",
+			labelFontColor: "red",
+			labelAlign: "near"
+		}]
+      },
+      data: [{
+        type: "line",
+	//markerType: "cross",
+        xValueFormatString:"DD MMM hh:mm TT", //"D/MM h:mm",
+        yValueFormatString:"##.## °C",
+        connectNullData:true,
+	dataPoints: dataPoints
+      }]
+    });
+
+    chart.render();
+  })
+})
+
+</script>
+</head>
+<body>
+<script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<br>
+<div id="chartContainer" style="height: 360px; width: 100%;"></div>
+</body>
+</html>
