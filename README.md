@@ -27,24 +27,9 @@ Select process :
     Return : Application/text
 ```
 
-# DATABASE: 
+# DATABASE:   
+Database structure :
 ```
-pi@rasNab:~/database $ sqlite3 control.db
-SQLite version 3.16.2 2017-01-06 16:32:41
-Enter ".help" for usage hints.
-sqlite> select * From RoomDetails ;
-1|Library
-sqlite> select * From Temperature ;
-1|1|222.0|2019-05-19 12:55:38
-2|1|222.0|2019-05-24 13:46:47       //   ID │ RoomID │TemperatureC│ Datetime
-                                    //    3 │    1   │     51.5   │2019-05-24 14:17:55
-4|1|51.5|2019-05-24 14:18:05
-5|1|51.5|2019-05-24 14:18:09
-6|1|51.5|2019-05-24 14:18:14
-7|1|51.0|2019-05-31 09:39:51
-8|1|49.4|2019-06-05 06:37:08
-sqlite> .quit
-
 >CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID))
 
@@ -64,6 +49,27 @@ Room VARCHAR(25));
 CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID));
 ```
+
+Database content :
+```
+pi@rasNab:~/database $ sqlite3 control.db
+SQLite version 3.16.2 2017-01-06 16:32:41
+Enter ".help" for usage hints.
+sqlite> select * From RoomDetails ;
+1|Library
+sqlite> select * From Temperature ;
+1|1|222.0|2019-05-19 12:55:38
+2|1|222.0|2019-05-24 13:46:47       //   ID │ RoomID │TemperatureC│ Datetime
+                                    //    3 │    1   │     51.5   │2019-05-24 14:17:55
+4|1|51.5|2019-05-24 14:18:05
+5|1|51.5|2019-05-24 14:18:09
+6|1|51.5|2019-05-24 14:18:14
+7|1|51.0|2019-05-31 09:39:51
+8|1|49.4|2019-06-05 06:37:08
+sqlite> .quit
+```
+
+
 # Launch the server from host :
 ```
 $ python3 2.1_Data_fetching.py
