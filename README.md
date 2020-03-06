@@ -55,6 +55,8 @@ Select process :
 ```
 
 # DATABASE:   
+![image](https://user-images.githubusercontent.com/52040368/76063377-0535b280-5fa1-11ea-9049-c60eb08a06fb.png)  
+
 Database structure/ create DB :
 ```
 >CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
