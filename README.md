@@ -2,7 +2,34 @@
 
 # TREE:
 ```
-│   control.db                 --> Database    :   │ID│RoomID│TemperatureC│Datetime │ 
+│   control.db                  --> Database    :   │ID│RoomID│TemperatureC│Datetime │ 
+│   Flask_Data_fetching.py      --> Server py  :   in: <IP:port> ; <IP:port>/graph  │ Out : selectDB->Application/json ; http /text 
+│   request_InsertCPUTemp.py    --> Insert Temperature every 1 minute              : Insert Temp loop
+│   request_InsertCPUTempOnce.py--> Insert the discontinuity of Data each startup  : Insert Null once   
+│
+└───templates
+        CanvasJS-Json-Data-Api-Ajax-Chart - Copy.html
+```
+
+- [x] Database    :  
+``` 
+control.db  >  table 'Temperature' :
+        │ID│RoomID│TemperatureC│Datetime │ 
+```
+- [x] Server py   :  
+```
+Flask_Data_fetching.py  
+        In  : <IP:port>         <IP:port>/graph   
+        Out : selectDB          ->Application/json ; http /text 
+```
+- [x] Insert Temperature every 1 minute              : Insert Temp loop
+- [x] Insert the discontinuity of Data each startup  : Insert Null once   
+
+
+
+# TREE:
+```
+│   control.db                  --> Database    :   │ID│RoomID│TemperatureC│Datetime │ 
 │   Flask_Data_fetching.py      --> Server py  :   in: <IP:port> ; <IP:port>/graph  │ Out : selectDB->Application/json ; http /text 
 │   request_InsertCPUTemp.py    --> Insert Temperature every 1 minute              : Insert Temp loop
 │   request_InsertCPUTempOnce.py--> Insert the discontinuity of Data each startup  : Insert Null once   
