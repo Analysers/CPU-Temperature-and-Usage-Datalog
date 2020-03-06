@@ -110,4 +110,9 @@ $ python3 2.1_Data_fetching.py
 ```
 # Clien's requests : 
 HTTP(HTML) Request : `http://rasnab.mshome.net:5000/graph `   
-HTTP(Json) Request : `http://rasnab.mshome.net:5000/`
+HTTP(Json) Request : `http://rasnab.mshome.net:5000/`  
+# Synthesis : 
+![dataflow](https://user-images.githubusercontent.com/52040368/76094757-92e2c380-5fdc-11ea-87ba-988a250f8f92.png)
+
+
+
