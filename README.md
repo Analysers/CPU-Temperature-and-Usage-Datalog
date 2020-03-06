@@ -1,6 +1,6 @@
 ![CPU Temperature and CPU Usage DataLog](https://user-images.githubusercontent.com/52040368/72912970-e1ead700-3d55-11ea-8e50-8a1d1476c45e.png)
 
-# TREE:
+# File system :
 ```
 │   control.db                  --> Database    :   │ID│RoomID│TemperatureC│Datetime │ 
 │   Flask_Data_fetching.py      --> Server py  :   in: <IP:port> ; <IP:port>/graph  │ Out : selectDB->Application/json ; http /text 
@@ -27,7 +27,7 @@ Flask_Data_fetching.py
 
 
 
-# TREE:
+## TREE:
 ```
 │   control.db                  --> Database    :   │ID│RoomID│TemperatureC│Datetime │ 
 │   Flask_Data_fetching.py      --> Server py  :   in: <IP:port> ; <IP:port>/graph  │ Out : selectDB->Application/json ; http /text 
