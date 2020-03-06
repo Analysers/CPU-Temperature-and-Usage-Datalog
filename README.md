@@ -77,6 +77,10 @@ Room VARCHAR(25));
 CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID));
 ```
+```
+<iframe width="560" height="315" src='https://dbdiagram.io/embed/5e61ffc24495b02c3b87e18d'> </iframe>
+```
+https://dbdiagram.io/d/5e61ffc24495b02c3b87e18d
 
 Database content/ Populate the database :
 ```
