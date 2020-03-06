@@ -55,7 +55,7 @@ Select process :
 ```
 
 # DATABASE:   
-Database structure :
+Database structure/ create DB :
 ```
 >CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID))
@@ -64,6 +64,7 @@ RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) RE
 Room VARCHAR(25))
 
 ```
+Implementation :
 ```
 $ sqlite3 control.db
 
@@ -77,7 +78,7 @@ CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID));
 ```
 
-Database content :
+/Database content/ Populate the database :
 ```
 pi@rasNab:~/database $ sqlite3 control.db
 SQLite version 3.16.2 2017-01-06 16:32:41
