@@ -64,10 +64,10 @@ Room VARCHAR(25));
 CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID));
 ```
-# Starting programe from server :
+# Launch the server from host :
 ```
 $ python3 2.1_Data_fetching.py
 ```
 # Clien's request : 
-HTTP(HTML) Request : `http://rasnab.mshome.net:5000/graph ` </br>
+HTTP(HTML) Request : `http://rasnab.mshome.net:5000/graph `   
 HTTP(Json) Request : `http://rasnab.mshome.net:5000/`
