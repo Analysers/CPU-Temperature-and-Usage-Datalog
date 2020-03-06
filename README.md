@@ -68,6 +68,6 @@ RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) RE
 ```
 $ python3 2.1_Data_fetching.py
 ```
-# Clien's request : 
+# Clien's requests : 
 HTTP(HTML) Request : `http://rasnab.mshome.net:5000/graph `   
 HTTP(Json) Request : `http://rasnab.mshome.net:5000/`
