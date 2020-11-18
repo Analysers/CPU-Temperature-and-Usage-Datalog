@@ -58,7 +58,7 @@ Select process :
 ![image](https://user-images.githubusercontent.com/52040368/76063377-0535b280-5fa1-11ea-9049-c60eb08a06fb.png)  
 
 Database structure/ create DB :
-```
+```sql
 >CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID))
 
@@ -67,7 +67,7 @@ Room VARCHAR(25))
 
 ```
 Implementation :
-```
+```sql
 $ sqlite3 control.db
 
 sqlite> .tables
@@ -79,13 +79,13 @@ Room VARCHAR(25));
 CREATE TABLE Temperature (ID INTEGER PRIMARY KEY AUTOINCREMENT,
 RoomID INTEGER, TemperatureC FLOAT(8), Datetime DATETIME, FOREIGN KEY(RoomID) REFERENCES RoomDetails(ID));
 ```
-```
+```javascript
 <iframe width="560" height="315" src='https://dbdiagram.io/embed/5e61ffc24495b02c3b87e18d'> </iframe>
 ```
 https://dbdiagram.io/d/5e61ffc24495b02c3b87e18d
 
 Database content/ Populate the database :
-```
+```sql
 pi@rasNab:~/database $ sqlite3 control.db
 SQLite version 3.16.2 2017-01-06 16:32:41
 Enter ".help" for usage hints.
