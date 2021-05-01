@@ -1,4 +1,7 @@
+Visualize the history of the CPU load and Temperature in a well illustrative Chart. 
+
 ![CPU Temperature and CPU Usage DataLog](https://user-images.githubusercontent.com/52040368/72912970-e1ead700-3d55-11ea-8e50-8a1d1476c45e.png)
+
 
 # File system :
 ```
