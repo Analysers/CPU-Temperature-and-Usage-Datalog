@@ -1,20 +1,26 @@
 #!/usr/bin/env python
-import sqlite3, urllib2, json, os, time, psutil
+import sqlite3
+import urllib2
+import json
+import os
+import time
+import psutil
 
-def TempVar():
+def measure_temp():
         temp = os.popen("vcgencmd measure_temp").readline()
-        return (temp.replace("temp=","").replace("'C","").replace("\n",""))
+        return (temp.replace("temp=","").replace("'C",""))
 
 def main():
-    Temperature = TempVar()
+    Room = 1
+    Temperature = measure_temp()
     CPU = psutil.cpu_percent()
-    my_query = 'INSERT INTO CPU(Datetime, TempC, CPU) VALUES(CURRENT_TIMESTAMP, %s,%s);' %(Temperature,CPU)
+    my_query = 'INSERT INTO Temperature(RoomID,TemperatureC,Datetime,CPU) VALUES(%s,%s,CURRENT_TIMESTAMP,%s);' %(Room,Temperature$
     try:
-        connection = sqlite3.connect('/home/pi/CPUData/CPUdatalog.db',isolation_level=None)
+        connection = sqlite3.connect('/home/pi/database/control.db',isolation_level=None)
         cursor = connection.cursor()
         cursor.execute(my_query)
         query_results = cursor.fetchone()
-        my_response = 'Inserted temp = %s and CPU usage = %s successfully' % (Temperature,CPU)
+        my_response = 'Inserted temp = %s and CPU usage = %s for room %s' % (Temperature,CPU, Room)
     except sqlite3.Error, e:
         my_response = "There is an error %s:" % (e)
     finally:
